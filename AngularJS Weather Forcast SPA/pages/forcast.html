@@ -1,0 +1,19 @@
+<p>
+    <a href="#/">Back To Home</a>
+</p>
+
+<p>Forecast for {{city}}</p>
+<hr>
+Days: <a ng-class="{'bg-primary': days === '2'}" href="#/forecast/2">2<a/> | 
+      <a ng-class="{'bg-primary': days === '5'}" href="#/forecast/5">5<a/> |
+      <a ng-class="{'bg-primary': days === '7'}" href="#/forecast/7">7<a/>
+<hr>
+<div ng-repeat="a in weatherData.data.list">
+    <div class="row">
+        <div class="col-md-12">
+            <weather-forecast weather-list="a" 
+            convert-to-date="convertToDate(dt)" 
+            date-format="medium" ></weather-forecast>
+        </div>        
+    </div>        
+</div>
